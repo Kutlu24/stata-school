@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stata Okulu - Stata'yı Keşfedin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="stata-commands-bg"></div>
+
+    <header>
+        <h1>Stata Okulu</h1>
+        <p>Stata'yı Keşfedin, Verilerinizi Anlayın!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#ana-sayfa"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+            <li><a href="#kurslar"><i class="fas fa-book"></i> Kurslar</a></li>
+            <li><a href="#rehberler"><i class="fas fa-compass"></i> Rehberler</a></li>
+            <li><a href="#ornekler"><i class="fas fa-code"></i> Örnekler</a></li>
+            <li><a href="#kaynaklar"><i class="fas fa-link"></i> Kaynaklar</a></li>
+            <li><a href="#topluluk"><i class="fas fa-users"></i> Topluluk</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="ana-sayfa">
+            <h2>Hoş Geldiniz</h2>
+            <p>Stata Okulu'na hoş geldiniz! Bu sitede istatistiksel yazılım <strong>Stata</strong>'yı sıfırdan öğrenmek için ihtiyacınız olan temel kursları, komut rehberlerini ve çalışan kod örneklerini bulacaksınız. İçerik, sosyal bilimlerde ve ekonometri derslerinde en sık kullanılan komutlar etrafında düzenlenmiştir.</p>
+        </section>
+
+        <section id="kurslar">
+            <h2>Kurslar</h2>
+            <div class="kurs-kategorileri">
+                <button data-kurs="temel-stata">Temel Stata</button>
+                <button data-kurs="ileri-duzey-stata">İleri Düzey Stata</button>
+                <button data-kurs="ozel-konular">Özel Konular</button>
+            </div>
+            <div id="kurs-icerik">
+                <!-- Kurs İçeriği JavaScript ile Dinamik Olarak Yüklenecek -->
+            </div>
+        </section>
+
+        <section id="rehberler">
+            <h2>Rehberler</h2>
+
+            <div class="rehber-kart">
+                <h3>Veri İçe Aktarma</h3>
+                <p>Excel, CSV veya başka bir Stata veri setini çalışma alanına yükleme.</p>
+                <pre><code>import excel "veri.xlsx", sheet("Sayfa1") firstrow clear
+import delimited "veri.csv", clear
+use "veriseti.dta", clear</code></pre>
+            </div>
+
+            <div class="rehber-kart">
+                <h3>Temel Komutlar Referansı</h3>
+                <pre><code>describe          // Değişkenlere genel bakış
+summarize gelir   // Betimsel istatistikler
+tabulate cinsiyet // Frekans tablosu
+list in 1/10      // İlk 10 satırı göster
+browse            // Veri tarayıcısını aç</code></pre>
+            </div>
+
+            <div class="rehber-kart">
+                <h3>Veri Temizleme</h3>
+                <pre><code>drop if gelir == .          // Eksik gözlemleri at
+rename eskiisim yeniisim    // Değişken adını değiştir
+recode egitim (1/3=1) (4/6=2), gen(egitim_grup)
+label define grup 1 "Düşük" 2 "Yüksek"
+label values egitim_grup grup</code></pre>
+            </div>
+
+            <div class="rehber-kart">
+                <h3>Grafik Çizimi</h3>
+                <pre><code>histogram gelir, normal
+graph twoway scatter gelir egitim_yili
+graph export "grafik.png", replace</code></pre>
+            </div>
+        </section>
+
+        <section id="ornekler">
+            <h2>Örnekler</h2>
+
+            <div class="ornek-kart">
+                <h3>Basit Doğrusal Regresyon</h3>
+                <p>Gelir üzerinde eğitim yılı ve deneyimin etkisini test eden bir regresyon modeli:</p>
+                <pre><code>regress gelir egitim_yili deneyim
+* Standartlaştırılmış katsayılar için:
+regress gelir egitim_yili deneyim, beta
+* Model uyum iyiliği ve artıkların incelenmesi:
+predict artik, residuals
+histogram artik, normal</code></pre>
+            </div>
+
+            <div class="ornek-kart">
+                <h3>Gruplara Göre Betimsel İstatistik Tablosu</h3>
+                <p>Bir kategorik değişkene göre ortalama/standart sapma tablosu oluşturmak:</p>
+                <pre><code>tabstat gelir egitim_yili, by(bolge) statistics(mean sd n) columns(statistics)
+* Aynı tabloyu dışa aktarmak için:
+tabstat gelir, by(bolge) save
+collect layout, formatoptions(sspace hspace(2))</code></pre>
+            </div>
+        </section>
+
+        <section id="kaynaklar">
+            <h2>Kaynaklar</h2>
+            <p>Buradaki içerik bir başlangıç noktasıdır — daha derin konular için aşağıdaki resmi ve yaygın olarak kullanılan kaynaklara bakabilirsiniz:</p>
+            <ul class="kaynak-listesi">
+                <li>
+                    <a href="https://www.stata.com/support/" target="_blank" rel="noopener">Stata Resmi Destek ve Dokümantasyon</a>
+                    <span>Komut referansı, kullanıcı kılavuzları ve sürüm notları.</span>
+                </li>
+                <li>
+                    <a href="https://stats.oarc.ucla.edu/stata/" target="_blank" rel="noopener">UCLA IDRE — Stata Kaynakları</a>
+                    <span>Konuya göre düzenlenmiş, uygulamalı örneklerle desteklenmiş ders notları.</span>
+                </li>
+                <li>
+                    <a href="https://www.statalist.org/" target="_blank" rel="noopener">Statalist</a>
+                    <span>Stata kullanıcılarının ve geliştiricilerinin resmi tartışma forumu.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="topluluk">
+            <h2>Topluluk</h2>
+            <p>Bu site şu an bağımsız bir statik sayfa olduğu için kendi forum veya yorum altyapısı yok. Sorularınız için Stata kullanıcılarının en aktif olduğu <a href="https://www.statalist.org/" target="_blank" rel="noopener">Statalist</a> forumunu, ya da yerel üniversite/departman istatistik danışmanlık saatlerini öneririz.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Stata Okulu</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
