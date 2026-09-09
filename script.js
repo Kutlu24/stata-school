@@ -38,47 +38,47 @@ document.addEventListener("DOMContentLoaded", function() {
         switch (kurs) {
             case "temel-stata":
                 icerik = `
-                    <h3>Temel Stata</h3>
-                    <p>Stata arayüzüne ve günlük veri analizi işlerine giriş.</p>
+                    <h3>Stata Basics</h3>
+                    <p>An introduction to the Stata interface and everyday data-analysis work.</p>
                     <ul>
-                        <li>Ders 1: Stata Arayüzüne Giriş (Command, Results, Variables, Do-file Editor)</li>
-                        <li>Ders 2: Veri İçe Aktarma (import excel, import delimited, use)</li>
-                        <li>Ders 3: Değişken Türleri, Etiketleme ve Biçimlendirme (label variable, label define)</li>
-                        <li>Ders 4: Temel Betimsel İstatistikler (summarize, tabulate, tabstat)</li>
-                        <li>Ders 5: Veri Temizleme (drop, keep, replace, recode, missing values)</li>
-                        <li>Ders 6: Basit Grafikler (histogram, scatter, graph export)</li>
+                        <li>Lesson 1: Introduction to the Stata Interface (Command, Results, Variables, Do-file Editor)</li>
+                        <li>Lesson 2: Importing Data (import excel, import delimited, use)</li>
+                        <li>Lesson 3: Variable Types, Labeling and Formatting (label variable, label define)</li>
+                        <li>Lesson 4: Core Descriptive Statistics (summarize, tabulate, tabstat)</li>
+                        <li>Lesson 5: Cleaning Data (drop, keep, replace, recode, missing values)</li>
+                        <li>Lesson 6: Basic Plots (histogram, scatter, graph export)</li>
                     </ul>
                 `;
                 break;
             case "ileri-duzey-stata":
                 icerik = `
-                    <h3>İleri Düzey Stata</h3>
-                    <p>Regresyon tabanlı ve panel/zaman serisi analiz teknikleri.</p>
+                    <h3>Advanced Stata</h3>
+                    <p>Regression-based techniques plus panel and time-series analysis.</p>
                     <ul>
-                        <li>Ders 1: Çoklu Doğrusal Regresyon (regress, standartlaştırılmış katsayılar, artık analizi)</li>
-                        <li>Ders 2: Kategorik Bağımlı Değişken Modelleri (logit, probit, margins)</li>
-                        <li>Ders 3: Panel Veri Analizi (xtset, xtreg, sabit/rassal etkiler)</li>
-                        <li>Ders 4: Zaman Serisi Analizi (tsset, arima, temel durağanlık testleri)</li>
-                        <li>Ders 5: Do-dosyası ile İş Akışı Otomasyonu ve Yeniden Üretilebilirlik</li>
-                        <li>Ders 6: Kayıp Veri ve Çoklu Atama (mi impute, mi estimate)</li>
+                        <li>Lesson 1: Multiple Linear Regression (regress, standardized coefficients, residual analysis)</li>
+                        <li>Lesson 2: Categorical Dependent-Variable Models (logit, probit, margins)</li>
+                        <li>Lesson 3: Panel Data Analysis (xtset, xtreg, fixed/random effects)</li>
+                        <li>Lesson 4: Time-Series Analysis (tsset, arima, basic stationarity tests)</li>
+                        <li>Lesson 5: Workflow Automation and Reproducibility with Do-files</li>
+                        <li>Lesson 6: Missing Data and Multiple Imputation (mi impute, mi estimate)</li>
                     </ul>
                 `;
                 break;
             case "ozel-konular":
                 icerik = `
-                    <h3>Özel Konular</h3>
-                    <p>Daha ileri düzey kullanıcılar için makro yazımı, benzetim ve programlama.</p>
+                    <h3>Special Topics</h3>
+                    <p>Macro writing, simulation, and programming for more advanced users.</p>
                     <ul>
-                        <li>Makro ve Döngü Yazımı (local/global makrolar, foreach, forvalues)</li>
-                        <li>Program Yazımı (program define, syntax, args)</li>
-                        <li>Monte Carlo Benzetimi (simulate, postfile)</li>
-                        <li>Bootstrap ve Yeniden Örnekleme Yöntemleri (bootstrap, jackknife)</li>
-                        <li>Büyük Veri Setleriyle Çalışma (frames, çoklu veri setini bellekte tutma)</li>
+                        <li>Macros and Loops (local/global macros, foreach, forvalues)</li>
+                        <li>Writing Programs (program define, syntax, args)</li>
+                        <li>Monte Carlo Simulation (simulate, postfile)</li>
+                        <li>Bootstrap and Resampling Methods (bootstrap, jackknife)</li>
+                        <li>Working with Large Datasets (frames, holding multiple datasets in memory)</li>
                     </ul>
                 `;
                 break;
             default:
-                icerik = "<p>Lütfen yukarıdan bir kurs kategorisi seçin.</p>";
+                icerik = "<p>Pick a course category above to get started.</p>";
                 break;
         }
 
