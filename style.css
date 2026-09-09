@@ -9,9 +9,9 @@
     --maroon-soft: #f3e4e6;
     --output-bg: #17130f;
     --output-text: #e8e2d6;
-    --font-display: "Source Serif 4", Georgia, serif;
-    --font-body: "IBM Plex Sans", Arial, sans-serif;
-    --font-mono: "IBM Plex Mono", "Courier New", monospace;
+    --font-display: "Domine", Georgia, serif;
+    --font-body: "Mulish", Arial, sans-serif;
+    --font-mono: "Fira Code", "Courier New", monospace;
 }
 
 * { box-sizing: border-box; }
@@ -127,6 +127,38 @@ nav a {
 nav a:hover {
     background-color: rgba(255,255,255,0.08);
     color: #fff;
+}
+
+.regression-divider {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    padding: 18px 20px 6px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.regression-figure {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.axis-line { stroke: var(--ink-soft); stroke-width: 1; }
+.fit-line { stroke: var(--maroon); stroke-width: 2.5; }
+.data-point { fill: var(--ink); opacity: 0.55; }
+.axis-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    fill: var(--ink-soft);
+}
+
+.regression-caption {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin: 6px 0 0;
+    letter-spacing: 0.01em;
 }
 
 main {
